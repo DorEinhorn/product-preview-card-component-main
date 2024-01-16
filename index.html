@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+:root{
+  --dark-cyan:hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+--dark-blue: hsl(212, 21%, 14%);
+--dark-gravish-blue: hsl(228, 12%, 48%);
+--White: hsl(0, 0%, 100%);;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: none;
+}
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cream);
+}
+
+.card-container{
+  background-color: var(--White);
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  width: 344px;
+  height: 600px;
+  margin:30px 15px;
+}
+
+.image-container {
+  height: 239px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius:0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 0px;
+  background-image: url("./images/image-product-mobile.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content-container{
+  margin: 20px
+}
+
+.top-content h2 {
+  color: var(--dark-gravish-blue);
+  font-size: 1.35em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+}
+.top-content h1 {
+  color: var(--dark-blue);
+  font-size: 2.5em;
+  font-weight: 800;
+  font-family: 'Fraunces', serif;
+  line-height: 36px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.paragraph p {
+  color: var(--dark-gravish-blue);
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 20px 30px 5px 0px;
+}
+
+.amount {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  justify-content: start;
+  margin-top: 20px;
+  margin-bottom: 8px
+}
+.amount .correct-val p{
+  color: var(--dark-cyan);
+  font-size: 2.5em;
+  font-weight: 800;
+  font-family: 'Fraunces', serif;
+}
+.amount .strikethrough-val p {
+  color: var(--dark-blue);
+  text-decoration: line-through;
+}
+
+.button {
+  align-items: center;
+  background-color: var(--dark-cyan);
+  border-radius: 8px;
+  border: none;
+  height: 50px;
+  margin-top: 16px;
+  padding-left: 80px;
+  padding-right: 80px;
+  width: 300px;
+}
+.button .button-pd {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+.button  .img {
+  height: 16px;
+  width: 15px;
+}
+.button  p {
+  min-width: 100px;
+  font-size: 1.2em;
+  color: var(--white);
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px){
+   .card-container {
+     grid-template-columns: repeat(2, 1fr);
+     width: 600px;
+     height: 450px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 150px;
+     margin-bottom: auto;
+     background-color: var(--White);
+  }
+  .image-container {
+     width: 300px;
+     height: 450px;
+     border-top-left-radius: 10px;
+     border-bottom-left-radius:0px;
+     border-top-right-radius: 0px;
+     border-bottom-right-radius: 0px;
+     background-image: url("/projects/product-preview-card-component-main/images/image-product-desktop.jpg");
+  }
+  .content-container {
+     margin: 40px 30px;
+     max-width: 250px;
+    
+  }
+  .paragraph p {
+     margin-right: 40px;
+  }
+  .button {
+     width: 240px;
+     margin-top: 20px;
+     padding-left: 60px;
+     padding-right: 60px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="card-container">
+<section class="image-container">
+
+</section>
+<section class="content-container">
+  <div class="top-content">
+    <h2>
+      PERFUMES
+    </h2>
+    <h1>
+      Gabrielle Essence Eau De Parfum
+    </h1>
+  </div>
+
+ <div class="paragraph">
+  <p>
+    A floral, solar and voluptuous interpretation composed by 
+    Olivier Polge, Perfumer-Creator for the House of CHANEL.
+  </p>
+ </div>
+
+<div class="amount">
+  <div class="correct-val">
+    <p>
+     $149.99
+    </p>
+  </div>
+  <div class="strikethrough-val">
+   <p>
+    $169.99
+   </p>
+  </div>
+</div>
+ <button class="button">
+    <a href="">
+      <div class="button-pd">
+         <img src="./images/icon-cart.svg" alt="cart image">
+         <p> Add to Cart </p>
+      </div>
+    </a>
+ </button>
+</section>
+  </div>
+</body>
+</html>
